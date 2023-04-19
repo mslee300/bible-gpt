@@ -5,7 +5,7 @@
 </div>
 
 ## Inspiration💡 
-Christianity is a difficult religion to understand. After studying the Bible for many years, I still have many questions about it. Is there any way to get a straight and accurate answer from the Bible?
+Christianity is a difficult religion to understand. After studying the Bible for many years, I still have many questions about it. Is there any way to get an accurate answer straight from the Bible?
 
 ## What it does 🍽️
 BibleGPT does just that! It uses ChatGPT Turbo AI model to answer any question according to the Bible, with a Bible verse reference, so you can study the Bible 10X faster!
