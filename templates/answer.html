@@ -1,0 +1,42 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>BibleGPT</title>
+</head>
+<body>
+<a class="main-title" href="/">BibleGPT</a>
+<div class="kist-container">
+  <div class="bust">
+    <img src="/static/img/bible.png">
+  </div>
+  <p id="intro-message">{{ question }}</p>
+<div class="message  truncated">
+  <span id="gen_message" style="color:#FFFFAA;" class="spiel-content"> {{ message }}</span>
+</div>
+<div class="actions">
+  <a class="action" onclick="copyContent()">➹ Copy</a>
+  <span> </span>
+  <a class="action" href="/">⟳ Ask another</a>
+</div>
+</div>
+
+<script type="text/javascript"> 
+  let text = document.getElementById('gen_message').innerHTML;
+  const copyContent = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      console.log('Content copied to clipboard');
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  }
+</script> 
+</body>
+</html>
+

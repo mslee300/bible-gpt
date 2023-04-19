@@ -1,0 +1,57 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>BibleGPT</title>
+</head>
+<body>
+<a class="main-title" href="/">BibleGPT</a>
+<div class="kist-container">
+  <div class="bust">
+    <img src="/static/img/bible.png">
+  </div>
+  <p id="intro-message">"Ask me anything..."</p>
+  <div style="margin: 20px 0; color: #aaa;" class="remaining-queries">ex: What does the Bible say about tattoos?
+  </div>
+  <form class="create-form" method="post">
+    {% csrf_token %}
+    <input class="text-input" id="prompt" type="text" placeholder="Ask a question..." name="prompt" value="{{ prompt }}" maxlength="150">
+    <br>
+      <button type="submit" id="ask" >Ask GPT</button>
+  </form>
+</div>
+
+<script type="text/javascript"> 
+  let text = document.getElementById('gen_message').innerHTML;
+  const copyContent = async () => {
+    try {
+      await navigator.clipboard.writeText(text);
+      console.log('Content copied to clipboard');
+    } catch (err) {
+      console.error('Failed to copy: ', err);
+    }
+  }
+
+// Get the input field
+var input = document.getElementById("prompt");
+
+// Execute a function when the user presses a key on the keyboard
+input.addEventListener("keypress", function(event) {
+  // If the user presses the "Enter" key on the keyboard
+  if (event.key === "Enter") {
+    // Cancel the default action, if needed
+    event.preventDefault();
+    // Trigger the button element with a click
+    document.getElementById("ask").click();
+  }
+});
+  
+</script> 
+</body>
+</html>
+

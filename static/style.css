@@ -1,0 +1,98 @@
+body {
+  background-color: black;
+  font-family: 'PT Sans', sans-serif;
+}
+
+a {
+  text-decoration: none; /* no underline */
+  color: #aaa;
+}
+
+.main-title {
+    text-decoration: none;
+    position: relative;
+    display: block;
+    font-size: 30px;
+    color: #aaa;
+    text-align: center;
+    margin: 30px;
+}
+
+.kist-container {
+    font-size: 18px;
+    background: #000;
+    max-width: 600px;
+    margin: 0 auto;
+    display: block;
+    text-align: center;
+}
+
+.kist-container .bust {
+    text-align: center;
+    margin: 50px 0;
+}
+
+.kist-container .bust img {
+    width: 300px;
+    max-width: 60%;
+    box-shadow: 0 0 10px 4px rgba(255, 210, 200, 0.3), 0 0 40px 0 rgba(255, 255, 255, 0.3);
+    border: 3px solid #fff;
+    border-radius: 50%;
+}
+
+.kist-container .create-form {
+    text-align: center;
+}
+
+.kist-container .text-input {
+    font-size: 18px;
+    padding: 10px 0;
+    line-height: 20px;
+    width: 450px;
+    max-width: 95%;
+    box-sizing: border-box;
+    border: 3px solid transparent;
+    background: #222;
+    color: #fff;
+    text-align: center;
+    border-radius: 4px;
+}
+
+.kist-container button {
+    display: inline-block;
+    padding: 5px 30px;
+    border-radius: 2px;
+    margin: 10px;
+    background: #222;
+    color: #ddd;
+    font-size: 20px;
+    cursor: pointer;
+    border: none;
+}
+
+#intro-message {
+    font-size: 24px;
+    margin-bottom: 40px;
+    text-align: center;
+    color: white;
+}
+
+.kist-container .actions {
+    margin-top: 15px;
+    margin-bottom: 40px;
+    color: #AAAAAA;
+}
+
+.kist-container .action {
+    display: inline-block;
+    padding: 0 10px;
+    cursor: pointer;
+}
+
+.kist-container .message {
+    background: rgba(255,255,255,0.1);
+    color: #BBBBBB;
+    padding: 5px;
+    margin-top: 10px;
+    border-radius: 5px;
+}
