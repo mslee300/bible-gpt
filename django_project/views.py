@@ -1,9 +1,10 @@
 from django.shortcuts import render
 import openai
+import os
 
 from .forms import AnswerForm
 
-openai.api_key = ""
+openai.api_key = os.environ['OPENAI']
 
 # AI message generator
 def generate_message(request, prompt):
