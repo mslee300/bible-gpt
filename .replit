@@ -96,3 +96,6 @@ ignoredPackages = ["unit_tests"]
 [[ports]]
 localPort = 3000
 externalPort = 80
+
+[deployment]
+deploymentTarget = "cloudrun"
