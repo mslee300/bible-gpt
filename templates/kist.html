@@ -1,15 +1,5 @@
-{% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <!-- CSS -->
-    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
-    <title>BibleGPT</title>
-</head>
-<body>
+{% extends 'base.html' %}
+{% block content %}
 <a class="main-title" href="/">BibleGPT</a>
 <div class="kist-container">
   <div class="bust">
@@ -52,6 +42,4 @@ input.addEventListener("keypress", function(event) {
 });
   
 </script> 
-</body>
-</html>
-
+{% endblock %}
