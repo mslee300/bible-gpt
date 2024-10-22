@@ -1,5 +1,15 @@
-{% extends 'base.html' %}
-{% block content %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <!-- CSS -->
+    <link rel="stylesheet" type="text/css" href="{% static 'style.css' %}">
+    <title>BibleGPT</title>
+</head>
+<body>
 <a class="main-title" href="/">BibleGPT</a>
 <div class="kist-container">
   <div class="bust">
@@ -27,4 +37,6 @@
     }
   }
 </script> 
-{% endblock %}
+</body>
+</html>
+

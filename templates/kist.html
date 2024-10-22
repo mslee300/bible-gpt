@@ -8,11 +8,14 @@
   <p id="intro-message">"Ask me anything..."</p>
   <div style="margin: 20px 0; color: #aaa;" class="remaining-queries">ex: What does the Bible say about tattoos?
   </div>
-  <form class="create-form" method="post">
-    {% csrf_token %}
-    <input class="text-input" id="prompt" type="text" placeholder="Ask a question..." name="prompt" value="{{ prompt }}" maxlength="150">
-    <br>
-      <button type="submit" id="ask" >Ask GPT</button>
+  <form class="create-form" method="post" onsubmit="showLoading()">
+      {% csrf_token %}
+      <input class="text-input" id="prompt" type="text" placeholder="Ask a question..." name="prompt" value="{{ prompt }}" maxlength="150" required>
+      <br>
+      <button type="submit" id="ask" class="buttonload">
+          <i class="fa fa-spinner fa-spin" id="spinner" style="display:none; margin-right: 8px;"></i>
+          <span id="buttontext">Ask GPT</span>
+      </button>
   </form>
 </div>
 
@@ -40,6 +43,31 @@ input.addEventListener("keypress", function(event) {
     document.getElementById("ask").click();
   }
 });
-  
+
+  function disableButton() {
+    const buttonText = document.getElementById('buttontext');
+    const spinner = document.getElementById('spinner');
+
+    // Change button text to 'Loading'
+    buttonText.innerText = 'Loading';
+
+    // Show the spinner
+    spinner.style.display = 'inline-block';
+  }
+
+  function showLoading() {
+      const buttonText = document.getElementById('buttontext');
+      const spinner = document.getElementById('spinner');
+
+      // Change button text to 'Loading'
+      buttonText.innerText = 'Loading...';
+
+      // Show the spinner
+      spinner.style.display = 'inline-block';
+
+      // Disable the button to prevent multiple clicks
+      document.getElementById('ask').disabled = true;
+  }
+
 </script> 
 {% endblock %}

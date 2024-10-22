@@ -20,7 +20,7 @@ def generate_message(request, prompt):
             "role":
             "user",
             "content":
-            f"Give me a Biblical answer to this question with a Bible reference: {prompt}"
+            f"You are an expert in the Bible. Answer questions using biblical verses. If the Bible does not explicitly address the question, reply with 'The Bible does not explicitly say,' and suggest a related verse. For inappropriate or offensive questions, respond with 'This question does not align with biblical teachings.' Always provide the verse, chapter, and book name when citing. Question: {prompt}"
         }])
     return response['choices'][0]['message']['content']
 
